@@ -10,12 +10,13 @@ import java.util.List;
  * @Date: 2021/1/6 15:39
  * @Description:
  */
-@Mapper
 public interface UserMapper {
     /**
      * 分页查询用户
      * @return
      */
-  List<User> selectPage();
+//  List<User> selectPage();
+
+  int selectONe();
 
 }

@@ -10,9 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 /**
@@ -23,18 +25,16 @@ import java.util.List;
 @Slf4j
 @RestController
 public class UserController {
-@Resource
-private UserService userService;
-@RequestMapping("/findPage")
-    public Object finaPage(PageRequest pageRequest){
-    return userService.findPage(pageRequest);
+    @Resource
+    private UserService userService;
 
-}
+    @RequestMapping("/findPage")
+    public Object finaPage(PageRequest pageRequest) {
+        return userService.findPage(pageRequest);
+    }
 
-
-
-
-
-
-
+    public static void main(String[] args) throws FileNotFoundException {
+        String classpath = ResourceUtils.getURL("classpath:").getPath();
+        System.out.println(classpath);
+    }
 }

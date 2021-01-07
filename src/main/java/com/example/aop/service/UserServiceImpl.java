@@ -27,7 +27,8 @@ public class UserServiceImpl implements UserService{
         int  pageNum = pageRequest.getPageNum();
         int  pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum,pageSize);
-        List<User> menu=userMapper.selectPage();
+//        List<User> menu=userMapper.selectPage();
+        List<User> menu = null ;
         return new PageInfo<User>(menu);
     }
 

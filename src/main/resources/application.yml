@@ -1,0 +1,12 @@
+spring:
+    datasource:
+      name: test
+      url: jdbc:mysql://bj-cdb-nqzzkayy.sql.tencentcdb.com:61097/mayueyue
+      username: root
+      password: fLeHadrR98C4jt
+      driver-class-name: com.mysql.jdbc.Driver
+#    password:
+#    username: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
